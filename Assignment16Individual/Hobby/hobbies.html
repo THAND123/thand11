@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Hobbies - Daniel Than</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to bottom, #000000, #1a1a1a, #333333);
+      color: white;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background: #111;
+      padding: 1rem 2rem;
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .logo {
+      color: #ff6600;
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .nav-links a {
+      background: #ff6600;
+      color: black;
+      padding: 0.5rem 1rem;
+      border-radius: 5px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .nav-links a:hover {
+      background: #ffa64d;
+    }
+
+    main {
+      padding: 2rem;
+    }
+
+    section {
+      margin-bottom: 4rem;
+    }
+
+    h2 {
+      color: #ff6600;
+      margin-bottom: 1rem;
+    }
+
+    .slider-container {
+      position: relative;
+      max-width: 600px;
+      margin-bottom: 1rem;
+    }
+
+    .slider-container img {
+      display: none;
+      width: 100%;
+      height: auto;
+      border-radius: 10px;
+      border: 2px solid #ff6600;
+    }
+
+    .slider-container img.active {
+      display: block;
+    }
+
+    .slider-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      margin-top: 0.5rem;
+    }
+
+    .slider-buttons button {
+      padding: 0.5rem 1rem;
+      background: #ff6600;
+      border: none;
+      color: black;
+      font-weight: bold;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .slider-buttons button:hover {
+      background: #ffa64d;
+    }
+
+    p {
+      max-width: 600px;
+    }
+
+    footer {
+      background: #111;
+      text-align: center;
+      padding: 1rem;
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <nav class="navbar">
+      <div class="logo">Individual Final Project</div>
+      <ul class="nav-links">
+<a href="../index.html">Go Back to Home</a>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section>
+      <h2>Playing Video Games</h2>
+      <div class="slider-container" id="games-slider">
+        <img src="HobbyImages/game1.jpg" alt="Gaming 1" class="active">
+        <img src="HobbyImages/game2.jpg" alt="Gaming 2">
+        <img src="HobbyImages/game3.webp" alt="Gaming 3">
+      </div>
+      <div class="slider-buttons">
+        <button onclick="changeSlide('games-slider', -1)">Previous</button>
+        <button onclick="changeSlide('games-slider', 1)">Next</button>
+      </div>
+      <p>Videogames is my favorite hobby. Ever since I was 8 years old till now I have been playing video games. It has been my main source of entertainment for all my life. It is how I release all my stress and psend most of time.</p>
+    </section>
+
+    <section>
+      <h2>Playing Basketball</h2>
+      <div class="slider-container" id="basketball-slider">
+        <img src="HobbyImages/sports1.jpg" alt="Basketball 1" class="active">
+        <img src="HobbyImages/sports2.jpg" alt="Basketball 2">
+        <img src="HobbyImages/sports3.jpg" alt="Basketball 3">
+      </div>
+      <div class="slider-buttons">
+        <button onclick="changeSlide('basketball-slider', -1)">Previous</button>
+        <button onclick="changeSlide('basketball-slider', 1)">Next</button>
+      </div>
+      <p>Basketball ahs been my main sport throughout my life. I have been playing it since I was 8. I would go to the park almost everyday with my siblings and play basketball. I played in many tournaments and have won some. Although now, I mainly play it for fun with friends.</p>
+    </section>
+
+    <section>
+      <h2>Hanging Out with Friends</h2>
+      <div class="slider-container" id="friends-slider">
+        <img src="HobbyImages/friends1.jpg" alt="Friends 1" class="active">
+        <img src="HobbyImages/friends2.jpg" alt="Friends 2">
+        <img src="HobbyImages/friends3.jpg" alt="Friends 3">
+      </div>
+      <div class="slider-buttons">
+        <button onclick="changeSlide('friends-slider', -1)">Previous</button>
+        <button onclick="changeSlide('friends-slider', 1)">Next</button>
+      </div>
+      <p>My friends are a part of my life. I spend time with them a lot bonding with them, taveling with them, eating with them, palying sports and video games together. I cherish my friends a lot and they mean a lot to me.</p>
+    </section>
+
+    <section>
+      <h2>Traveling</h2>
+      <div class="slider-container" id="travel-slider">
+        <img src="HobbyImages/travel1.jpg" alt="Travel 1" class="active">
+        <img src="HobbyImages/travel2.jpg" alt="Travel 2">
+        <img src="HobbyImages/travel3.jpg" alt="Travel 3">
+        <img src="HobbyImages/travel4.jpg" alt="Travel 4">
+        <img src="HobbyImages/travel5.jpg" alt="Travel 5">
+        <img src="HobbyImages/travel6.jpg" alt="Travel 6">
+        <img src="HobbyImages/travel7.jpg" alt="Travel 7">
+      </div>
+      <div class="slider-buttons">
+        <button onclick="changeSlide('travel-slider', -1)">Previous</button>
+        <button onclick="changeSlide('travel-slider', 1)">Next</button>
+      </div>
+      <p>Traveling is probably my second favorite hobby. I like to travel to places I have never been. I have been to an airforce base, random bridges, and to the beaches in the states. I have also been out of the country like to Canada, Bahamas, Carribean, Mexico, and more.</p>
+    </section>
+  </main>
+
+  <footer>
+    <p>5/8/2025 Daniel Than Individual Project</p>
+  </footer>
+
+  <script>
+    const sliders = {};
+
+    document.querySelectorAll('.slider-container').forEach(container => {
+      const id = container.id;
+      sliders[id] = {
+        index: 0,
+        images: container.querySelectorAll('img')
+      };
+      sliders[id].images.forEach((img, i) => {
+        img.classList.toggle('active', i === 0);
+      });
+    });
+
+    function changeSlide(containerId, direction) {
+      const slider = sliders[containerId];
+      if (!slider) return;
+
+      slider.images[slider.index].classList.remove('active');
+      slider.index += direction;
+      if (slider.index < 0) slider.index = slider.images.length - 1;
+      if (slider.index >= slider.images.length) slider.index = 0;
+      slider.images[slider.index].classList.add('active');
+    }
+  </script>
+
+</body>
+</html>

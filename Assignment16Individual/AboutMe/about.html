@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>About Me - Daniel Than</title>
+  <style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background: linear-gradient(to bottom, #000000, #1a1a1a, #333333);
+  color: white;
+  min-height: 100vh;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+h1, h2 {
+  color: #ff6600;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+  background-color: #1a1a1a;
+  padding: 1.5rem;
+  border-radius: 10px;
+  border: 2px solid #ff6600;
+}
+
+.section-info {
+  max-width: 50%;
+  font-size: 1.2rem;
+  line-height: 1.8;
+}
+
+.carousel-container {
+  width: 45%;
+  text-align: center;
+}
+
+.carousel {
+  position: relative;
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+  border-radius: 10px;
+  border: 2px solid #ff6600;
+}
+
+.carousel img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: none;
+  cursor: pointer;
+}
+
+.carousel img.active {
+  display: block;
+}
+
+.carousel-buttons {
+  margin-top: 0.5rem;
+}
+
+.carousel-buttons button {
+  background-color: #ff6600;
+  color: black;
+  border: none;
+  padding: 0.5rem 1rem;
+  margin: 0 0.5rem;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.carousel-buttons button:hover {
+  background-color: #ffa64d;
+}
+
+footer {
+  margin-top: 2rem;
+  text-align: center;
+  color: #aaa;
+  font-size: 0.9rem;
+}
+
+/* Go Home Button Style */
+.go-home {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background-color: #ff6600;
+  color: white;
+  border: none;
+  padding: 0.8rem 1.5rem;
+  font-size: 1.2rem;
+  font-weight: bold;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.go-home:hover {
+  background-color: #ffa64d;
+  transform: scale(1.05);
+}
+
+.go-home:focus {
+  outline: none;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.9);
+}
+
+.modal-content {
+  margin: 10% auto;
+  display: block;
+  width: 80%;
+  max-width: 700px;
+}
+
+.close {
+  position: absolute;
+  top: 15px;
+  right: 35px;
+  color: #fff;
+  font-size: 40px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+  color: #bbb;
+}
+
+@media (max-width: 768px) {
+  .section {
+    flex-direction: column;
+    align-items: center;
+  }
+  .section-info, .carousel-container {
+    width: 100%;
+  }
+}
+
+
+  </style>
+</head>
+<body>
+
+<a href="../index.html" class="go-home">Go Back</a>
+
+
+  <h1>About Me</h1>
+
+     <div class="section">
+    <div class="section-info">
+      <h2>Birthday</h2>
+      <p><strong>October 31st is my birthday!<strong> My birthday is always spooky!</p>
+    </div>
+    <div class="carousel-container">
+      <div class="carousel" id="carousel-birthday">
+        <img src="AboutImages/birthday1.jpg" class="active" alt="Birthday 1" onclick="openModal('images/birthday1.jpg')">
+        <img src="AboutImages/birthday2.webp" alt="Birthday 2" onclick="openModal('images/birthday2.jpg')">
+        <img src="AboutImages/birthday3.jpg"Birthday 3" onclick="openModal('images/birthday3.jpg')">
+      </div>
+      <div class="carousel-buttons">
+        <button onclick="prevSlide('carousel-birthday')">←</button>
+        <button onclick="nextSlide('carousel-birthday')">→</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-info">
+      <h2>Favorite Colors</h2>
+      <p><strong>Orange & Black is my favorite color!</strong> These colors reflect my love for Halloween and the fall season!</p>
+    </div>
+    <div class="carousel-container">
+      <div class="carousel" id="carousel-color">
+        <img src="AboutImages/color1.jpg" class="active" alt="Orange 1" onclick="openModal('images/orange1.jpg')">
+        <img src="AboutImages/color2.jpg" alt="Orange 2" onclick="openModal('images/orange2.jpg')">
+        <img src="AboutImages/color3.jpg" alt="Black 1" onclick="openModal('images/black1.jpg')">
+      </div>
+      <div class="carousel-buttons">
+        <button onclick="prevSlide('carousel-color')">←</button>
+        <button onclick="nextSlide('carousel-color')">→</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-info">
+      <h2>Favorite Food</h2>
+      <p><strong>Steak is my most favorite food</strong> I love steak so much. I like my steak medium rare cooked in a pan with garlic butter.</p>
+    </div>
+    <div class="carousel-container">
+      <div class="carousel" id="carousel-food">
+        <img src="AboutImages/food1.jpg" class="active" alt="Steak 1" onclick="openModal('images/steak1.jpg')">
+        <img src="AboutImages/food2.jpg" alt="Steak 2" onclick="openModal('images/steak2.jpg')">
+        <img src="AboutImages/food3.jpg" alt="Steak 3" onclick="openModal('images/steak3.jpg')">
+      </div>
+      <div class="carousel-buttons">
+        <button onclick="prevSlide('carousel-food')">←</button>
+        <button onclick="nextSlide('carousel-food')">→</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-info">
+      <h2>Religion</h2>
+      <p><strong>I am a raised Catholic. </strong> My parents raised me as a Catholic ever since I was a baby. I have been baptised, received communion, and have been confirmed into the church. My faith is important to me and shapes my values and beliefs.</p>
+    </div>
+    <div class="carousel-container">
+      <div class="carousel" id="carousel-religion">
+        <img src="AboutImages/church1.jpg" class="active" alt="Religion 1" onclick="openModal('images/religion1.jpg')">
+        <img src="AboutImages/church2.jpg" alt="Religion 2" onclick="openModal('images/religion2.jpg')">
+        <img src="AboutImages/church3.jpg" alt="Religion 3" onclick="openModal('images/religion3.jpg')">
+      </div>
+      <div class="carousel-buttons">
+        <button onclick="prevSlide('carousel-religion')">←</button>
+        <button onclick="nextSlide('carousel-religion')">→</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-info">
+      <h2>Ethnicity</h2>
+      <p><strong>I am vietnemese</strong> I was born into a household with two loving vietnemese parents. I embrace my culture everyday by eating the foods from it and listening to music in the language. <p>
+    </div>
+    <div class="carousel-container">
+      <div class="carousel" id="carousel-ethnicity">
+        <img src="AboutImages/vietnam1.jpg" class="active" alt="Vietnam 1" onclick="openModal('images/vietnam1.jpg')">
+        <img src="AboutImages/vietnam2.jpg" alt="Vietnam 2" onclick="openModal('images/vietnam2.jpg')">
+        <img src="AboutImages/vietnam3.jpg" alt="Vietnam 3" onclick="openModal('images/vietnam3.jpg')">
+      </div>
+      <div class="carousel-buttons">
+        <button onclick="prevSlide('carousel-ethnicity')">←</button>
+        <button onclick="nextSlide('carousel-ethnicity')">→</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-info">
+      <h2>Family</h2>
+      <p><strong>Family is a very improtant matter to me. I cherish my family very much and am willing to do anything for them. I have spend all of my life with them having the most best life with them.</strong></p>
+    </div>
+    <div class="carousel-container">
+      <div class="carousel" id="carousel-family">
+        <img src="AboutImages/family1.jpg" class="active" alt="Family 1" onclick="openModal('images/family1.jpg')">
+        <img src="AboutImages/family2.jpg" alt="Family 2" onclick="openModal('images/family2.jpg')">
+        <img src="AboutImages/family3.jpg" alt="Family 3" onclick="openModal('images/family3.jpg')">
+      </div>
+      <div class="carousel-buttons">
+        <button onclick="prevSlide('carousel-family')">←</button>
+        <button onclick="nextSlide('carousel-family')">→</button>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <p>5/9/2025 — Daniel Than's Personal Website</p>
+  </footer>
+
+  <div id="imageModal" class="modal">
+    <span class="close" onclick="closeModal()">&times;</span>
+    <img class="modal-content" id="modalImg">
+  </div>
+
+  <script>
+    function nextSlide(carouselId) {
+      const carousel = document.getElementById(carouselId);
+      const images = carousel.querySelectorAll('img');
+      let current = Array.from(images).findIndex(img => img.classList.contains('active'));
+      images[current].classList.remove('active');
+      let nextIndex = (current + 1) % images.length;
+      images[nextIndex].classList.add('active');
+    }
+
+    function prevSlide(carouselId) {
+      const carousel = document.getElementById(carouselId);
+      const images = carousel.querySelectorAll('img');
+      let current = Array.from(images).findIndex(img => img.classList.contains('active'));
+      images[current].classList.remove('active');
+      let prevIndex = (current - 1 + images.length) % images.length;
+      images[prevIndex].classList.add('active');
+    }
+
+    function openModal(imgSrc) {
+      const modal = document.getElementById("imageModal");
+      const modalImg = document.getElementById("modalImg");
+      modal.style.display = "block";
+      modalImg.src = imgSrc;
+    }
+
+    function closeModal() {
+      document.getElementById("imageModal").style.display = "none";
+    }
+  </script>
+</body>
+</html>
